@@ -37,7 +37,7 @@ public class FileUploadController {
 		}
 	}
 	
-	@GetMapping("/attachment/{id}")
+	@GetMapping("/attachment/{id}") 
 	public ResponseEntity<Resource> getAttachment(@PathVariable int id) {
 	    try {
 	        Attachment attachment = attachmentService.getAttachmentById(id);

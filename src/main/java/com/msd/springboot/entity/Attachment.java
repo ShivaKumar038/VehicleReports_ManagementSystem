@@ -10,7 +10,7 @@ import jakarta.persistence.Lob;
 
 @Entity
 public class Attachment {
-	
+	 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

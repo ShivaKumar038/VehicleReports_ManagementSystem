@@ -19,8 +19,12 @@ public class Attachment {
 	private String uploadedBy;
 	private LocalDate uploadedDate;
 	
-	@Lob
+	@Lob 
 	private byte[] data;
+	
+	public Attachment() {
+		
+	}
 
 	public Attachment(String fileName, String fileType, byte[] data, String uploadedBy, LocalDate uploadedDate) {
 		

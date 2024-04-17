@@ -35,4 +35,9 @@ public class AttachmentService {
 		} 
 	}
 
+	public Attachment getAttachmentById(int id) {
+		
+		return attachmentRepository.findById(id).get();
+	}
+
 }

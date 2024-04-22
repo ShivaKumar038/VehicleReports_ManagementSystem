@@ -31,16 +31,23 @@ public class FileUploadController {
 		return "home";
 	}
 	
+	@RequestMapping("/addfile")
+	public String addFile()
+	{
+		return "upload";
+	}
+	
 	@PostMapping("/upload")
-	public ResponseEntity uploadFile(@RequestParam("file") MultipartFile file,@RequestParam("uploadedby") String uploadedBy,
+	public String uploadFile(@RequestParam("file") MultipartFile file,@RequestParam("uploadedby") String uploadedBy,
 			@RequestParam("uploadedDate") String date) {
 		
 		try {
 			Attachment attachment = attachmentService.savefile(file,uploadedBy,date);
-			return new ResponseEntity("file saved",HttpStatus.OK);
+			
+			return "upload";
 		} catch (Exception e) {
 			System.out.println("not saved"+e);
-			return new ResponseEntity("file not saved",HttpStatus.INTERNAL_SERVER_ERROR);
+			return "upload";
 		}
 	}
 	
